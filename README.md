@@ -9,11 +9,13 @@
 [![Documentation](https://img.shields.io/website/https/microsoft.github.io/Olive?down_color=red&down_message=offline&up_message=online)](https://microsoft.github.io/Olive/)
 
 ## AI Model Optimization Toolkit for the ONNX Runtime
+
 </div>
 
 Given a model and targeted hardware, Olive (abbreviation of **O**nnx **LIVE**) composes the best suitable optimization techniques to output the most efficient ONNX model(s) for inferencing on the cloud or edge, while taking a set of constraints such as accuracy and latency into consideration.
 
 ## 📰 News Highlights
+
 Here are some recent videos, blog articles and labs that highlight Olive:
 
 - [ Oct 2025 ] [Exploring Optimal Quantization Settings for Small Language Models with Olive](https://microsoft.github.io/Olive/blogs/quant-slms.html)
@@ -33,15 +35,18 @@ For a full list of news and blogs, read the [news archive](./NEWS.md).
 ## 🚀 Getting Started
 
 ### ✨ Quickstart
+
 If you prefer using the command line directly instead of Jupyter notebooks, we've outlined the quickstart commands here.
 
 #### 1. Install Olive CLI
+
 We recommend installing Olive in a [virtual environment](https://docs.python.org/3/library/venv.html) or a [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
 ```
 pip install olive-ai
 pip install transformers onnxruntime-genai
 ```
+
 > [!NOTE]
 > Olive has optional dependencies that can be installed to enable additional features. Please refer to [Olive package config](./olive/olive_config.json) for the list of extras and their dependencies.
 
@@ -79,17 +84,19 @@ olive optimize \
     --output_path models/qwen
 ```
 
->[!TIP]
-><details>
-><summary>PowerShell Users</summary>
->Line continuations between Bash and PowerShell are not interchangeable. If you are using PowerShell, then you can copy-and-paste the following command that uses compatible line continuation.
+> [!TIP]
 >
->```powershell
->olive optimize `
+> <details>
+> <summary>PowerShell Users</summary>
+> Line continuations between Bash and PowerShell are not interchangeable. If you are using PowerShell, then you can copy-and-paste the following command that uses compatible line continuation.
+>
+> ```powershell
+> olive optimize `
 >    --model_name_or_path Qwen/Qwen2.5-0.5B-Instruct `
 >    --output_path models/qwen `
 >    --precision int4
->```
+> ```
+
 </details>
 <br>
 
@@ -100,8 +107,7 @@ The automatic optimizer will:
 1. Capture the ONNX Graph and store the weights in an ONNX data file.
 1. Optimize the ONNX Graph.
 
-Olive can automatically optimize popular model *architectures* like Llama, Phi, Qwen, Gemma, etc out-of-the-box - [see detailed list here](https://huggingface.co/docs/optimum/en/exporters/onnx/overview). Also, you can optimize other model architectures by providing details on the input/outputs of the model (`io_config`).
-
+Olive can automatically optimize popular model _architectures_ like Llama, Phi, Qwen, Gemma, etc out-of-the-box - [see detailed list here](https://huggingface.co/docs/optimum/en/exporters/onnx/overview). Also, you can optimize other model architectures by providing details on the input/outputs of the model (`io_config`).
 
 #### 3. Inference on the ONNX Runtime
 
@@ -115,15 +121,17 @@ The sample chat app to run is found as [model-chat.py](https://github.com/micros
 - [Recipes](https://github.com/microsoft/olive-recipes)
 
 ## Data/Telemetry
-Distributions of this project may collect usage data and send it to Microsoft to help improve our products and services. See the [privacy statement](docs/Privacy.md) for more details.
+
+Unlike the upstream project, distributions of this project does **NOT**, under any circumstances, collect usage data and send it to Microsoft to help "improve" their products and services.
 
 ## 🤝 Contributions and Feedback
+
 - We welcome contributions! Please read the [contribution guidelines](./CONTRIBUTING.md) for more details on how to contribute to the Olive project.
 - For feature requests or bug reports, file a [GitHub Issue](https://github.com/microsoft/Olive/issues).
 - For general discussion or questions, use [GitHub Discussions](https://github.com/microsoft/Olive/discussions).
 
-
 ## ⚖️ License
+
 Copyright (c) Microsoft Corporation. All rights reserved.
 
 Licensed under the [MIT](./LICENSE) License.
@@ -132,5 +140,3 @@ Licensed under the [MIT](./LICENSE) License.
 
 [![Build Status](https://dev.azure.com/aiinfra/PublicPackages/_apis/build/status%2FOlive%20CI?label=Olive-CI)](https://dev.azure.com/aiinfra/PublicPackages/_build/latest?definitionId=1240)
 [![Build Status](https://dev.azure.com/aiinfra/PublicPackages/_apis/build/status%2FOlive-ORT-Nightly?label=Olive-ORT-Nightly)](https://dev.azure.com/aiinfra/PublicPackages/_build/latest?definitionId=1279)
-
-
